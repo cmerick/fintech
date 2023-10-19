@@ -1,16 +1,25 @@
-import Header from "./components/Header";
-import { UiContextProvider } from "./hooks/UiContext";
+import Header from "./components/Header/Header";
+import Sidenav from "./components/Sidenav/Sidenav";
+import { VendasContextProvider } from "./hooks/vendaContext";
+import Resumo from "./pages/Resumo/Resumo";
+import Vendas from "./pages/Vendas/Vendas";
 
 
 
 function App() {
- 
+
 
   return (
-    <UiContextProvider>
-      <Header/>
-    </UiContextProvider>
-
+    <VendasContextProvider>
+      <div className="container">
+      <Sidenav/>
+      <main>
+        <Header/>
+        <Resumo/>
+        <Vendas/>
+      </main>
+    </div>
+    </VendasContextProvider>
   );
 }
 

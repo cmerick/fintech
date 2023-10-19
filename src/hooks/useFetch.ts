@@ -22,7 +22,6 @@ const useFetch = <T>(url: RequestInfo | URL , options?: RequestInit) => {
         if(!response.ok) throw new Error(`Error: ${response.status}`);
 
         const json = (await response.json()) as T;
-        
         if(!signal.aborted) setData(json);
       } catch (error) {
         if(!signal.aborted && error instanceof Error) {
@@ -37,7 +36,7 @@ const useFetch = <T>(url: RequestInfo | URL , options?: RequestInit) => {
       abortController.abort();
     }
   }, [url])
-
+  console.log(data);
   return {data, loading, error};
 }
 

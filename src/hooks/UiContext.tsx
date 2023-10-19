@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 interface IUiContext {
   dark: boolean;
@@ -6,10 +6,11 @@ interface IUiContext {
 
 }
 
-export const UiContext = React.createContext<IUiContext>({} as IUiContext);
+const UiContext = createContext<IUiContext | null>(null);
 
 export const useUi = () => {
   const context = useContext(UiContext);
+  if(context === null) throw new Error('useContext must be called inside Provider');
   return context;
 }
 
