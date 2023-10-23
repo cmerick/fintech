@@ -1,13 +1,22 @@
-import VendaDto from '../../models/Vendas/vendas.dto';
+import { NavLink } from "react-router-dom";
+import VendaDto from "../../models/Vendas/vendas.dto";
 
 
-
-const VendaItem = ({venda}: {venda: VendaDto}) => {
-  return <div className='venda box'>
-    <a href="" style={{fontFamily: "monospace"}}>{venda.id}</a>
-    <div>{venda.nome}</div>
-    <div>{venda.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</div>
-  </div>;
-}
+const VendaItem = ({ venda }: { venda: VendaDto }) => {
+  return (
+    <div className="venda box">
+      <NavLink to={`/vendas/${venda.id}`} style={{ fontFamily: "monospace" }}>
+        {venda.id}
+      </NavLink>
+      <div>{venda.nome}</div>
+      <div>
+        {venda.preco.toLocaleString("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default VendaItem;

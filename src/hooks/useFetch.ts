@@ -36,7 +36,6 @@ const useFetch = <T>(url: RequestInfo | URL , options?: RequestInit) => {
       abortController.abort();
     }
   }, [url])
-  console.log(data);
   return {data, loading, error};
 }
 

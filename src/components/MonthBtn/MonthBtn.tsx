@@ -1,14 +1,14 @@
 import { useVendas } from "../../hooks/vendaContext";
 
 const style: React.CSSProperties = {
-  padding: 'var(--gap) var(--gap-s)',
-  backgroundColor: 'var(--color-3)',
-  border: 'none',
-  borderRadius: 'var(--gap)',
-  color: 'var(--color-2)',
-  fontWeight: 600,
-  textTransform: 'capitalize'
-}
+  padding: "var(--gap) var(--gap-s)",
+  backgroundColor: "var(--color-3)",
+  border: "none",
+  borderRadius: "var(--gap)",
+  color: "var(--color-2)",
+  fontWeight: "600",
+  textTransform: "capitalize",
+};
 
 const nomeMes = (n: number): string => {
   const date = new Date();

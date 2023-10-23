@@ -1,3 +1,4 @@
+import Grafico from '../../components/Grafico/Grafico';
 import { useVendas } from '../../hooks/vendaContext';
 
 
@@ -37,7 +38,7 @@ const Resumo = () => {
       </div>
     </div>
     <div className='box mb'>
-            Gráficos
+            <Grafico data={data}/>
     </div>
   </section>;
 }
